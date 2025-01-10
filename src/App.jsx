@@ -1,23 +1,17 @@
 import { useState } from 'react'
 import './App.css'
+import luna from '../public/images/icon-moon.svg'
+
+import circulo from '../public/images/icon-cross.svg'
+import Header from './Components/Header'
 
 const App = () => {
   return (
-    <div className="bg-[url(./images/bg-mobile-light.jpg)] bg-no-repeat bg-contain">
+    <div className="bg-[url(./images/bg-mobile-light.jpg)] bg-no-repeat bg-contain bg-gray-200 min-h-screen">
 
-      <header className='container mx-auto px-4 pt-8'>
-        <div className="flex justify-between">
-          <h1 className="uppercase text-white text-2xl font-semibold tracking-[0.3em]">todo</h1>
-          <button>luna</button>
-        </div>
+      <Header/>
 
-        <form action="" className='bg-white rounded-md overflow-hidden py-4'>
-          <input type="text" placeholder='Create a new todo...' />
-        </form>
-
-      </header>
-
-      <main className='container mx-auto px-4'>
+      <main className='container mx-auto px-4 mt-8'>
         <article className=''>
           <button>Circulo</button>
           <p>complete online js course</p>
