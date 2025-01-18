@@ -43,6 +43,16 @@ const initialStatesTodos = [
 
 const App = () => {
   const [todos, setTodos] = useState(initialStatesTodos)
+
+  const createTodo = (title) => {
+    const newTodo ={
+      id: todos.length + 1,
+      title,
+      completed: false
+    }
+  }
+      // {...todos} => clonacion de los todos existentes, {newTodos} => nuevos todos
+  setTodos([...todos, newTodo])
   
   return (
     <div className="bg-[url(./images/bg-mobile-light.jpg)] bg-no-repeat bg-contain bg-gray-200 min-h-screen">
