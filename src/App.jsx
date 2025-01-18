@@ -5,6 +5,7 @@ import TodoCreate from './Components/TodoCreate'
 import TodoList from './Components/TodoList'
 import TodoComputed from './Components/TodoComputed'
 import TodoFilter from './Components/TodoFilter'
+import Footer from './Components/Footer'
 
 const App = () => {
   return (
@@ -24,7 +25,7 @@ const App = () => {
 
       </main>
 
-        <footer className='text-center'>drag and drop to reorder list</footer>
+        <Footer/>
         
     </div>
   )
