@@ -1,6 +1,6 @@
 import luna from '../../public/images/icon-moon.svg'
 // import circulo from '../public/images/icon-cross.svg'
-import MoonIcon from './icons/MoonIcon';
+import MoonIcon from './icons/IconMoon';
 
 const Header = () => {
     return (

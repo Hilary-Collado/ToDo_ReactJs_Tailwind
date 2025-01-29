@@ -9,7 +9,7 @@ const TodoList = ({ todos }) => {
         {todos.map((todo) => (
           <TodoItem key={todo.id} todo={todo} />
         ))}
-
+        
         <TodoComputed />
       </div>
     </>

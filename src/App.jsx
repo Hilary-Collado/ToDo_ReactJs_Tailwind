@@ -22,21 +22,6 @@ const initialStatesTodos = [
     id: 3,
     title: '10 minutes meditation',
     completed: false,
-  },
-  {
-    id: 4,
-    title: 'Read for 1 hour',
-    completed: false,
-  },
-  {
-    id: 5,
-    title: 'Pick up groceries',
-    completed: false,
-  },
-  {
-    id: 6,
-    title: 'Complete Todo App on Frontend Mentor',
-    completed: false,
   }
 ]
 
@@ -45,14 +30,15 @@ const App = () => {
   const [todos, setTodos] = useState(initialStatesTodos)
 
   const createTodo = (title) => {
+    
     const newTodo ={
       id: todos.length + 1,
       title,
       completed: false
     }
+    setTodos([...todos, newTodo])
   }
       // {...todos} => clonacion de los todos existentes, {newTodos} => nuevos todos
-  setTodos([...todos, newTodo])
   
   return (
     <div className="bg-[url(./images/bg-mobile-light.jpg)] bg-no-repeat bg-contain bg-gray-200 min-h-screen">
@@ -61,7 +47,7 @@ const App = () => {
 
       <main className='container mx-auto px-4 mt-8'>
 
-        <TodoCreate/>
+        <TodoCreate createTodo={createTodo}/>
       
         <TodoList todos={todos}/> 
 
