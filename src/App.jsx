@@ -50,8 +50,11 @@ const App = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const computedItemsLeft = todos.filter((todo)=>!todo.completed).length;
-  
+  const computedItemsLeft = todos.filter((todo) => !todo.completed).length;
+
+  const clearCompleted = () => {
+    setTodos(todos.filter((todo) => !todo.completed));
+  };
   return (
     <div className="bg-[url(./images/bg-mobile-light.jpg)] bg-no-repeat bg-contain bg-gray-200 min-h-screen">
       <Header />
@@ -65,8 +68,11 @@ const App = () => {
           removeTodo={removeTodo}
         />
 
-        <TodoComputed computedItemsLeft={computedItemsLeft}/>
-         
+        <TodoComputed
+          computedItemsLeft={computedItemsLeft}
+          clearCompleted={clearCompleted}
+        />
+
         <TodoFilter />
       </main>
 
