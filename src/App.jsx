@@ -23,6 +23,16 @@ const initialStatesTodos = [
     title: "10 minutes meditation",
     completed: true,
   },
+  {
+    id: 4,
+    title: "50 minutes homework",
+    completed: false,
+  },
+  {
+    id: 5,
+    title: "dance",
+    completed: false,
+  },
 ];
 
 const App = () => {
@@ -55,6 +65,23 @@ const App = () => {
   const clearCompleted = () => {
     setTodos(todos.filter((todo) => !todo.completed));
   };
+
+  const [filter, setFilter] = useState("all");
+
+  const changeFilter = (filter) => setFilter(filter)
+  
+  const filteredTodos = () =>{
+     switch (filter){
+      case "all":
+        return todos;
+      case "active":
+        return todos.filter((todos) => !todos.completed)
+      case "completed":
+        return todos.filter((todos) => todos.completed)
+      default:
+        return todos;
+     }
+  }
   return (
     <div className="bg-[url(./images/bg-mobile-light.jpg)] bg-no-repeat bg-contain bg-gray-200 min-h-screen">
       <Header />
@@ -63,7 +90,8 @@ const App = () => {
         <TodoCreate createTodo={createTodo} />
 
         <TodoList
-          todos={todos}
+          // todos={todos}
+          todos={filteredTodos()}
           updateTodo={updateTodo}
           removeTodo={removeTodo}
         />
@@ -73,7 +101,7 @@ const App = () => {
           clearCompleted={clearCompleted}
         />
 
-        <TodoFilter />
+        <TodoFilter changeFilter={changeFilter}/>
       </main>
 
       <Footer />
