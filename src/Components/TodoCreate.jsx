@@ -24,7 +24,7 @@ const TodoCreate = ({ createTodo }) => {
       <form
         action=""
         onSubmit={handleSubmitAddTodo}
-        className="bg-white rounded-md overflow-hidden py-4 items-center px-4 flex gap-4 mb-5"
+        className="flex items-center gap-4 overflow-hidden rounded-md bg-white py-4 px-4 mb-5"
       >
         <span className="rounded-full border-2 w-5 h-5 inline-block"></span>
 

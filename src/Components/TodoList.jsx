@@ -2,6 +2,7 @@ import TodoComputed from "./TodoComputed";
 import TodoItem from "./TodoItem";
 
 const TodoList = ({ todos, removeTodo, updateTodo }) => {
+
   return (
     <>
       {/* [&>article]:px-4 => le aplica un padding de 4 a todos los article que sean hijos de un div que tenga la clase article */}
@@ -10,7 +11,6 @@ const TodoList = ({ todos, removeTodo, updateTodo }) => {
           <TodoItem key={todo.id} todo={todo} updateTodo={updateTodo} removeTodo={removeTodo}/>
         ))}
         
-        <TodoComputed />
       </div>
     </>
   );

@@ -1,7 +1,5 @@
-import luna from '../../public/images/icon-moon.svg'
-// import circulo from '../public/images/icon-cross.svg'
 import MoonIcon from './icons/IconMoon';
-
+  
 const Header = () => {
     return (
         <header className='container mx-auto px-4 pt-8'>
