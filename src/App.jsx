@@ -19,12 +19,11 @@ const initialStatesTodos = [
     completed: false,
   },
   {
-    id: 3,
+    id: 3, 
     title: '10 minutes meditation',
-    completed: false,
+    completed: true,
   }
 ]
-
 
 const App = () => {
   const [todos, setTodos] = useState(initialStatesTodos)
@@ -39,6 +38,15 @@ const App = () => {
     setTodos([...todos, newTodo])
   }
       // {...todos} => clonacion de los todos existentes, {newTodos} => nuevos todos
+
+      const updateTodo = (id, title) => {
+        setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo))
+      }
+      
+      const removeTodo = (id) => {
+        setTodos(todos.filter((todo) => todo.id !==id))
+      }
+
   
   return (
     <div className="bg-[url(./images/bg-mobile-light.jpg)] bg-no-repeat bg-contain bg-gray-200 min-h-screen">
@@ -49,7 +57,7 @@ const App = () => {
 
         <TodoCreate createTodo={createTodo}/>
       
-        <TodoList todos={todos}/> 
+        <TodoList todos={todos} updateTodo={updateTodo} removeTodo={removeTodo}/> 
 
         <TodoFilter/>
 
